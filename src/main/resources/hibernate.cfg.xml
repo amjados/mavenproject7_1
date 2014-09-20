@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->    
+        <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
+        <property name="hibernate.connection.url">jdbc:derby://localhost:1527/sample;create=true</property>
+        <property name="hibernate.connection.username">app</property>
+        <property name="hibernate.connection.password">app</property>    
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>    
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <!--create the database schema on startup if required -->
+        <property name="hbm2ddl.auto">update</property>
+        <mapping class="controller.Book"  />
+    </session-factory>
+</hibernate-configuration>
